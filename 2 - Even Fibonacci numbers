@@ -1,0 +1,15 @@
+def nextFibonacci(a: Int, b: Int): Int = {
+  a + b
+}
+
+def verifyEven(x: Int): Int = {
+  if (x % 2 == 0) x
+  else 0
+}
+
+def auxFunction(a: Int, b: Int): Int = nextFibonacci(a, b) match {
+    case x if (x > 4000000) => 0
+    case _ =>  verifyEven(nextFibonacci(a, b)) + auxFunction(b, nextFibonacci(a, b))  
+}
+
+auxFunction(0, 1)
